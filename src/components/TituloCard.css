@@ -1,0 +1,33 @@
+.titulo-card {
+  display: block;
+  color: var(--cor-texto);
+}
+
+.titulo-card img,
+.titulo-card__sem-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: var(--raio);
+  background: var(--cor-fundo-elevado);
+  object-fit: cover;
+}
+
+.titulo-card__sem-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-texto-suave);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.titulo-card h3 {
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.titulo-card span {
+  color: var(--cor-texto-suave);
+  font-size: 0.8rem;
+}

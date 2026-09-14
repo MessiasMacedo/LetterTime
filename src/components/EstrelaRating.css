@@ -1,0 +1,25 @@
+.estrela-rating {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.estrela-rating button {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--cor-borda);
+  padding: 0;
+}
+
+.estrela-rating button.preenchida {
+  color: var(--cor-estrela);
+}
+
+.estrela-rating button:not(:disabled):hover {
+  cursor: pointer;
+}
+
+.estrela-rating button:disabled {
+  cursor: default;
+}

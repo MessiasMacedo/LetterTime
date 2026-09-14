@@ -1,0 +1,31 @@
+.avaliacao-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 400px;
+}
+
+.avaliacao-form textarea {
+  min-height: 80px;
+  padding: 0.6rem;
+  border-radius: var(--raio);
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-fundo-elevado);
+  color: var(--cor-texto);
+  resize: vertical;
+}
+
+.avaliacao-form__botao {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border-radius: var(--raio);
+  border: none;
+  background: var(--cor-destaque);
+  color: white;
+  font-weight: 600;
+}
+
+.avaliacao-form__botao:disabled {
+  opacity: 0.5;
+}

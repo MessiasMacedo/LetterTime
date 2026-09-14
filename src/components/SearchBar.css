@@ -1,0 +1,31 @@
+.busca {
+  display: flex;
+  gap: 0.5rem;
+  margin-block: 1.5rem;
+}
+
+.busca input {
+  flex: 1;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--raio);
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-fundo-elevado);
+  color: var(--cor-texto);
+}
+
+.busca input:focus {
+  outline: 2px solid var(--cor-destaque);
+}
+
+.busca button {
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--raio);
+  border: none;
+  background: var(--cor-destaque);
+  color: white;
+  font-weight: 600;
+}
+
+.busca button:hover {
+  background: var(--cor-destaque-hover);
+}
