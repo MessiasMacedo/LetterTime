@@ -24,7 +24,18 @@ Ao final do projeto, a pessoa deve conseguir:
 - Visualizar e gerenciar todas as suas listas em uma página dedicada, removendo itens quando quiser;
 - Ter tudo isso preservado entre visitas, mesmo fechando e reabrindo o navegador.
 
-## 3. Funcionalidades
+## 3. User Stories
+
+- Como pessoa que assiste muito filme/série, eu quero **buscar um título pelo nome**, para encontrar rapidamente o que estou procurando sem depender de memória exata.
+- Como pessoa que descobriu um título novo, eu quero **ver os detalhes dele** (sinopse, gênero, nota), para decidir se vale a pena assistir.
+- Como pessoa organizando o que quer assistir, eu quero **marcar um título como "Quero Ver"**, para não esquecer dele depois.
+- Como pessoa que já assistiu algo, eu quero **marcar como "Assisti"**, para manter um histórico do que já vi.
+- Como pessoa com favoritos, eu quero **marcar um título como "Favorito"**, para destacar o que mais gostei, independente de já ter assistido ou não.
+- Como pessoa que assistiu um título, eu quero **dar uma nota e escrever um comentário curto**, para registrar minha opinião pessoal sobre ele.
+- Como pessoa que quer rever minhas escolhas, eu quero **ver todas as minhas listas reunidas em um só lugar**, para não precisar procurar título por título.
+- Como pessoa que mudou de ideia, eu quero **remover um título de uma lista**, para manter minhas listas atualizadas.
+
+## 4. Funcionalidades
 
 ### F01 — Buscar Filmes e Séries
 
@@ -96,7 +107,15 @@ Ao final do projeto, a pessoa deve conseguir:
 - [ ] Vazio — lista sem nenhum item
 - [ ] Sucesso — itens exibidos
 
-## 4. Fora do Escopo
+## 5. Regras do Produto
+
+- Um título só pode ser avaliado (nota + comentário) se estiver marcado como "Assisti" — não faz sentido avaliar algo que a pessoa não viu.
+- Um título pode estar em mais de uma lista ao mesmo tempo (ex.: Assisti + Favorito), já que "Quero Ver", "Assisti" e "Favoritos" são independentes entre si.
+- Remover um título de uma lista não apaga a avaliação já feita para ele — se o título voltar pra lista "Assisti" depois, a nota e o comentário salvos reaparecem.
+- Toda a persistência é local, no `localStorage` do navegador — não há conta, login nem sincronização entre dispositivos ou navegadores diferentes.
+- Os dados de filmes/séries (pôster, sinopse, gênero, nota geral) vêm sempre da API do TMDB; apenas as listas, notas pessoais e comentários são dados próprios do LetterTime.
+
+## 6. Fora do Escopo
 
 - Criação de conta ou login — os dados ficam salvos localmente, no navegador de cada pessoa
 - Sincronização entre dispositivos diferentes
