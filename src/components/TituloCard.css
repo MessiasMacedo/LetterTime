@@ -24,7 +24,13 @@
 
 .titulo-card h3 {
   font-size: 0.9rem;
+  line-height: 1.25;
   margin: 0.5rem 0 0.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.5em;
 }
 
 .titulo-card span {

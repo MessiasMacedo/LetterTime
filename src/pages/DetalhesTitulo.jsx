@@ -11,6 +11,14 @@ import './DetalhesTitulo.css'
 
 const LISTAS = ['queroVer', 'assisti', 'favoritos']
 
+// "Quero Ver" exclui as outras duas (ainda não assistiu, então não faz sentido
+// já ter assistido ou favoritado). "Assisti" e "Favoritos" podem coexistir.
+const EXCLUIDAS_POR = {
+  queroVer: ['assisti', 'favoritos'],
+  assisti: ['queroVer'],
+  favoritos: ['queroVer'],
+}
+
 function DetalhesTitulo() {
   const { id } = useParams()
   const [titulo, setTitulo] = useState(null)
@@ -42,10 +50,21 @@ function DetalhesTitulo() {
   }, [id])
 
   function aoAlternarLista(nomeLista) {
-    const ativandoAssisti = nomeLista === 'assisti' && !listasAtuais.assisti
+    const ativando = !listasAtuais[nomeLista]
+    const excluidas = ativando
+      ? EXCLUIDAS_POR[nomeLista].filter((outra) => listasAtuais[outra])
+      : []
+
     alternarNaLista(id, nomeLista)
-    setListasAtuais((atual) => ({ ...atual, [nomeLista]: !atual[nomeLista] }))
-    if (ativandoAssisti) setModalAberto(true)
+    excluidas.forEach((outra) => alternarNaLista(id, outra))
+
+    setListasAtuais((atual) => {
+      const proximo = { ...atual, [nomeLista]: ativando }
+      excluidas.forEach((outra) => { proximo[outra] = false })
+      return proximo
+    })
+
+    if (nomeLista === 'assisti' && ativando) setModalAberto(true)
   }
 
   function aoSalvarAvaliacao(nota, comentario) {
@@ -89,7 +108,7 @@ function DetalhesTitulo() {
         <ListaBotoes listasAtuais={listasAtuais} aoAlternar={aoAlternarLista} />
 
         {listasAtuais.assisti && (
-          <div className="detalhes-titulo__avaliacao">
+          <div className={`detalhes-titulo__avaliacao${avaliacao ? ' detalhes-titulo__avaliacao--preenchida' : ''}`}>
             {avaliacao ? (
               <>
                 <EstrelaRating valor={avaliacao.nota} />

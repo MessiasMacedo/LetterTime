@@ -1,24 +1,26 @@
 .lista-secao {
-  background: var(--cor-fundo-elevado);
-  border: 1px solid var(--cor-borda);
-  border-radius: var(--raio);
-  padding: 1.25rem 1.5rem;
-  margin-block: 1.25rem;
+  border-left: 3px solid var(--cor-destaque);
+  padding-left: 1.25rem;
+  margin-block: 2.5rem;
 }
 
 .lista-secao h2 {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0 0 1rem;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 1.25rem;
+  font-size: 1.4rem;
+}
+
+.lista-secao h2 svg {
+  color: var(--cor-destaque);
   font-size: 1.1rem;
-  color: var(--cor-destaque-hover);
 }
 
 .lista-secao__contagem {
-  margin-left: auto;
   color: var(--cor-texto-suave);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  font-family: var(--fonte);
   font-weight: 400;
 }
 
@@ -41,6 +43,7 @@
 }
 
 .lista-secao__remover {
+  margin-top: auto;
   padding: 0.3rem;
   border-radius: var(--raio);
   border: 1px solid var(--cor-borda);

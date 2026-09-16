@@ -74,7 +74,8 @@ Ao final do projeto, a pessoa deve conseguir:
 **Critérios de aceitação:**
 - [ ] Existe um controle (botão/toggle) para cada uma das três listas.
 - [ ] O controle reflete visualmente se o título já está naquela lista.
-- [ ] Um título pode estar em mais de uma lista ao mesmo tempo (ex.: Assisti + Favorito).
+- [ ] "Assisti" e "Favorito" podem estar marcadas ao mesmo tempo no mesmo título.
+- [ ] "Quero Ver" é exclusiva com as outras duas — marcá-la desmarca "Assisti" e "Favorito" automaticamente, e marcar "Assisti" ou "Favorito" desmarca "Quero Ver".
 - [ ] A escolha é salva no localStorage e continua lá após recarregar a página.
 
 **Estados:**
@@ -110,7 +111,7 @@ Ao final do projeto, a pessoa deve conseguir:
 ## 5. Regras do Produto
 
 - Um título só pode ser avaliado (nota + comentário) se estiver marcado como "Assisti" — não faz sentido avaliar algo que a pessoa não viu.
-- Um título pode estar em mais de uma lista ao mesmo tempo (ex.: Assisti + Favorito), já que "Quero Ver", "Assisti" e "Favoritos" são independentes entre si.
+- "Quero Ver" é exclusiva com "Assisti" e "Favoritos" — não faz sentido "querer ver" algo que já foi assistido ou já favoritado, então marcar "Quero Ver" desmarca as outras duas, e marcar qualquer uma das outras duas desmarca "Quero Ver". "Assisti" e "Favoritos" não têm restrição entre si — podem estar marcadas juntas.
 - Remover um título de uma lista não apaga a avaliação já feita para ele — se o título voltar pra lista "Assisti" depois, a nota e o comentário salvos reaparecem.
 - Toda a persistência é local, no `localStorage` do navegador — não há conta, login nem sincronização entre dispositivos ou navegadores diferentes.
 - Os dados de filmes/séries (pôster, sinopse, gênero, nota geral) vêm sempre da API do TMDB; apenas as listas, notas pessoais e comentários são dados próprios do LetterTime.
