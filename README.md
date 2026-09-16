@@ -60,3 +60,6 @@ VITE_TMDB_API_KEY=sua_chave_aqui
 - [Requisitos](./docs/requirements.md)
 - [Arquitetura](./docs/architecture.md)
 - [Referências](./docs/references/references.md)
+
+## Link
+link vercel: https://letter-time-7lm1b3sce-messiasmacedo.vercel.app/
